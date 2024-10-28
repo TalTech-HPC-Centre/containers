@@ -1,0 +1,13 @@
+Bootstrap: docker
+From: rockylinux:8
+
+%post
+    yum install python39 python39-pip -y
+    pip3 install jupyterlab 'python-lsp-server[all]'
+
+%test
+    python3 --version
+    jupyter --version
+
+%runscript
+    jupyter $@
