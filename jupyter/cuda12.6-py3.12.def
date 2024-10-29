@@ -1,8 +1,8 @@
 bootstrap: docker
-from: rockylinux:8
+from: nvcr.io/nvidia/cuda:12.6.2-cudnn-devel-rockylinux8
 
 %post
-    yum install python39 python39-pip -y
+    dnf install python3.12 python3.12-pip -y
     pip3 install jupyterlab 'python-lsp-server[all]'
 
 %test
@@ -13,4 +13,4 @@ from: rockylinux:8
     jupyter $@
 
 %labels
-    python 3.9.20
+    python 3.12
