@@ -1,5 +1,5 @@
 bootstrap: docker
-from: nvcr.io/nvidia/cuda:12.6.2-cudnn-devel-rockylinux8
+from: nvcr.io/nvidia/cuda:12.6.2-cudnn-runtime-rockylinux8
 
 %post
     dnf install python3.12 python3.12-pip -y
