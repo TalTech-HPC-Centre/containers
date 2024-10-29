@@ -1,0 +1,19 @@
+bootstrap: docker
+from: nvcr.io/nvidia/cuda:12.6.2-cudnn-runtime-rockylinux8
+
+%post
+    dnf install python3.12-3.12.5-2.el8_10 python3.12-pip -y
+    pip3 install jupyterlab 'python-lsp-server[all]'
+
+%test
+    python3 --version
+    jupyter --version
+
+%runscript
+    jupyter $@
+
+%labels
+    python 3.12
+
+
+
