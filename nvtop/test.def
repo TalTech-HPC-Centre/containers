@@ -1,6 +1,6 @@
 #bootstrap: docker
 #from: nvcr.io/nvidia/cuda:12.6.2-cudnn-runtime-rockylinux8
-bootstrap: oras:
+bootstrap: oras
 from: ghcr.io/taltech-hpc-centre/containers/cuda:runtime12.6.2-py3.12.5
 
 %post
