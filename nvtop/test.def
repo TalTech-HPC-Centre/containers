@@ -7,7 +7,11 @@ from: ghcr.io/taltech-hpc-centre/containers/cuda:runtime12.6.2-py3.12.5
     dnf install cmake ncurses-devel git gcc-c++ -y
     git clone https://github.com/Syllo/nvtop.git /opt/nvtop
     mkdir -p /opt/nvtop/build && cd /opt/nvtop/build
-    cmake .. -DNVIDIA_SUPPORT=ON -DAMDGPU_SUPPORT=OFF -DINTEL_SUPPORT=OFF
+    cmake .. -DNVIDIA_SUPPORT=ON -DAMDGPU_SUPPORT=OFF -DINTEL_SUPPORT=OFF \
+        -DMSM_SUPPORT=OFF \
+        -DPANFROST_SUPPORT=OFF \
+        -DPANTHOR_SUPPORT=OFF \
+        -DASCEND_SUPPORT=OFF
     make install
 
 %test
