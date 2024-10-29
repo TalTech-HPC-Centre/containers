@@ -4,8 +4,7 @@ from: nvcr.io/nvidia/cuda:12.6.2-cudnn-runtime-rockylinux8
 %post
     dnf install cmake ncurses-devel git gcc-c++ -y
     git clone https://github.com/Syllo/nvtop.git /opt/nvtop
-    cd /opt/nvtop
-    mkdir -p nvtop/build && cd nvtop/build
+    mkdir -p /opt/nvtop/build && cd /opt/nvtop/build
     cmake .. -DNVIDIA_SUPPORT=ON
     make install
 
