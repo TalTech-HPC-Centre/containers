@@ -1,11 +1,13 @@
-bootstrap: docker
-from: nvcr.io/nvidia/cuda:12.6.2-cudnn-runtime-rockylinux8
+#bootstrap: docker
+#from: nvcr.io/nvidia/cuda:12.6.2-cudnn-runtime-rockylinux8
+bootstrap: oras:
+from: ghcr.io/taltech-hpc-centre/containers/cuda:runtime12.6.2-py3.12.5
 
 %post
     dnf install cmake ncurses-devel git gcc-c++ -y
     git clone https://github.com/Syllo/nvtop.git /opt/nvtop
     mkdir -p /opt/nvtop/build && cd /opt/nvtop/build
-    cmake .. -DNVIDIA_SUPPORT=ON
+    cmake .. -DNVIDIA_SUPPORT=ON -DAMDGPU_SUPPORT=OFF -DINTEL_SUPPORT=OFF
     make install
 
 %test
