@@ -1,0 +1,3 @@
+bootstrap: oras
+from: ghcr.io/taltech-hpc-centre/containers/cuda:runtime12.2.2
+

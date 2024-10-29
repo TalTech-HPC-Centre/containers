@@ -1,5 +1,5 @@
 bootstrap: docker
-from: nvcr.io/nvidia/cuda:12.2.2-runtime-rockylinux8
+from: nvcr.io/nvidia/cuda:12.2.2-cudnn8-runtime-rockylinux8
 
 %test
     echo "Test"
