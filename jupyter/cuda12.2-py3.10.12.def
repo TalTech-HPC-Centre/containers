@@ -1,0 +1,12 @@
+bootstrap: oras
+from: ghcr.io/taltech-hpc-centre/containers/cuda:ubuntu22.04-runtime12.2.2-py3.10.12
+
+%post
+    pip3 install jupyterlab 'python-lsp-server[all]'
+
+%test
+    python3 --version
+    jupyter --version
+
+%runscript
+    jupyter $@
