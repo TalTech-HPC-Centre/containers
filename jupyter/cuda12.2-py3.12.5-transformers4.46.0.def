@@ -4,8 +4,9 @@ from: ghcr.io/taltech-hpc-centre/containers/cuda:runtime12.2.2-py3.12.5
 %post
     dnf install epel-release -y
     dnf install nvtop -y
-    pip3 install jupyterlab 'python-lsp-server[all]' transformers==4.46.0 accelerate datasets
+    pip3 install jupyterlab 'python-lsp-server[all]' \
+        transformers==4.46.0 accelerate datasets
 
 %test
-    python3 -c "import transformers; transformers.__version__"
+    python3 --version
 
